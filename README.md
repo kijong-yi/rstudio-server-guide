@@ -69,12 +69,11 @@ EOF
 ## etc 1: adjust timeout session
 
 Rstudio server suspend user's session to disk when no command is running more than 2 hrs.
-When working with very large objects, it is very painful when it happens. 
-One can adjust this by specifying extended timeout session at the config-file (`rsession.conf`).
+One can extend this by specifying it in the config-file (`rsession.conf`).
 
 `session-timeout-minutes=240`
 
-for infinity, specify it 0. 
+for infinity, `=0`. 
 
 ## etc 2: access to sandbox node
 
