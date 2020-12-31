@@ -79,15 +79,15 @@ for infinity, specify it 0.
 ## etc 2: access to sandbox node
 
 ```bash
-# in your local computer terminal (wsl for Windows users)
-# for security issue, I wrote any IP addresses and port below.
+# Run in your local computer terminal (wsl for Windows users)
+# For security issue, I wrote any IP addresses and port below.
 TUNNEL_IP=142.123.123.123
 SERVER_MAINNODE_IP=142.123.123.123
 SERVER_SANDBOX_ADDRESS=anode16
 
-ssh -L 11010:localhost:11010 TUNNEL_IP -p 3020 -t \
-  ssh -L 11010:localhost:11010 SERVER_MAINNODE_IP -p 3020 -t \
-    ssh -L 11010:localhost:11010 SERVER_SANDBOX_ADDRESS
+ssh -L 11010:localhost:11010 $TUNNEL_IP -p 3020 -t \
+  ssh -L 11010:localhost:11010 $SERVER_MAINNODE_IP -p 3020 -t \
+    ssh -L 11010:localhost:11010 $SERVER_SANDBOX_ADDRESS
 
 # In here, the linking port is 11010, so you can open the sandbox's port 11010 with your local 11010 port
 # If you run rstudio server with 11010 port on the sanbox node, you can open it by your browser with `localhost:11010` until the ssh session is alive.
